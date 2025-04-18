@@ -10,7 +10,7 @@
     "prisma": "^6.6.0"
   },
   "scripts": {
-    "vercel:dev": "vercel dev",
+    "vercel:dev": "prisma generate && vercel dev",
     "build": "prisma generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
