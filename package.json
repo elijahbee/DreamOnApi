@@ -2,7 +2,6 @@
   "name": "dreamon-api",
   "version": "1.0.0",
   "main": "journal.ts",
-  "type": "module",
   "dependencies": {
     "@prisma/client": "^6.6.0"
   },
