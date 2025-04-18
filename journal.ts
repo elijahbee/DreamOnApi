@@ -18,7 +18,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'PUT') {
-    const { id, title, content, date, tags } = req.body;
+    let body = req.body;
+    if (typeof body === 'string') {
+      try {
+        body = JSON.parse(body);
+      } catch (err) {
+        console.error('PUT body parse error:', err);
+        return res.status(400).json({ error: 'Invalid JSON body' });
+      }
+    }
+    const { id, title, content, date, tags } = body;
     if (!id) {
       return res.status(400).json({ error: 'Entry id is required.' });
     }
@@ -48,7 +57,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'POST') {
-    const { title, content, date, tags } = req.body;
+    let body = req.body;
+    if (typeof body === 'string') {
+      try {
+        body = JSON.parse(body);
+      } catch (err) {
+        console.error('POST body parse error:', err);
+        return res.status(400).json({ error: 'Invalid JSON body' });
+      }
+    }
+    const { title, content, date, tags } = body;
     if (!title || !content) {
       return res.status(400).json({ error: 'Title and content are required.' });
     }
