@@ -1,0 +1,20 @@
+{
+  "name": "dreamon-api",
+  "version": "1.0.0",
+  "main": "journal.ts",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^6.6.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^5.1.14",
+    "prisma": "^6.6.0"
+  },
+  "scripts": {
+    "vercel:dev": "vercel dev",
+    "build": "prisma generate",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  }
+}

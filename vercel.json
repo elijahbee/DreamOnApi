@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "journal.ts", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/journal", "dest": "journal.ts" }
+  ]
+}
